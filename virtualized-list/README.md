@@ -4,7 +4,7 @@ roblox-ts typings of [`virtualized-list-lua`](https://github.com/jsdotlua/virtua
 
 ## Installation
 
-To use, [`@rbxts/react-ts`](https://www.npmjs.com/package/@rbxts/react-ts) must be installed first.
+To use, [`@rbxts/react`](https://www.npmjs.com/package/@rbxts/react) must be installed first.
 
 Then, install `virtualized-list`!
 
@@ -20,4 +20,4 @@ A few minimal changes from the original source have been made to have better rob
 
 ## Sources
 
-`virtualized-list` sources were derived from [DefinitelyTyped/react-native](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-native/v0.68), with some minor modifications being performed to have compatibility with `@rbxts/react-ts`.
+`virtualized-list` sources were derived from [DefinitelyTyped/react-native](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-native/v0.68), with some minor modifications being performed to have compatibility with `@rbxts/react`.
