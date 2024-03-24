@@ -1,24 +1,27 @@
-import Roact from "@rbxts/roact";
+import React from "@rbxts/React";
 import { ScrollViewComponent } from "./scrollView";
 import { StyleProp, ViewStyle } from "./unimplemented";
 import { View } from "./view";
 import { ListRenderItem, ViewToken, VirtualizedListProps } from "./virtualizedList";
 
+type Array<T> = T[];
+type ReadonlyArray<T> = readonly T[];
+
 export interface FlatListProps<ItemT> extends VirtualizedListProps<ItemT> {
     /**
      * Rendered in between each item, but not at the top or bottom
      */
-    ItemSeparatorComponent?: Roact.ComponentType<any> | null | undefined;
+    ItemSeparatorComponent?: React.ComponentType<any> | null | undefined;
 
     /**
      * Rendered when the list is empty.
      */
-    ListEmptyComponent?: Roact.ComponentType<any> | Roact.Element | null | undefined;
+    ListEmptyComponent?: React.ComponentType<any> | React.Element | null | undefined;
 
     /**
      * Rendered at the very end of the list.
      */
-    ListFooterComponent?: Roact.ComponentType<any> | Roact.Element | null | undefined;
+    ListFooterComponent?: React.ComponentType<any> | React.Element | null | undefined;
 
     /**
      * Styling for internal View for ListFooterComponent
@@ -28,7 +31,7 @@ export interface FlatListProps<ItemT> extends VirtualizedListProps<ItemT> {
     /**
      * Rendered at the very beginning of the list.
      */
-    ListHeaderComponent?: Roact.ComponentType<any> | Roact.Element | null | undefined;
+    ListHeaderComponent?: React.ComponentType<any> | React.Element | null | undefined;
 
     /**
      * Styling for internal View for ListHeaderComponent
@@ -187,7 +190,7 @@ export interface FlatListProps<ItemT> extends VirtualizedListProps<ItemT> {
     fadingEdgeLength?: number | undefined;
 }
 
-export class FlatList<ItemT = any> extends Roact.Component<FlatListProps<ItemT>> {
+export class FlatList<ItemT = any> extends React.Component<FlatListProps<ItemT>> {
     /**
      * Scrolls to the end of the content. May be janky without `getItemLayout` prop.
      */
@@ -239,8 +242,8 @@ export class FlatList<ItemT = any> extends Roact.Component<FlatListProps<ItemT>>
      * Provides a reference to the underlying host component
      */
     getNativeScrollRef: () =>
-        | Roact.Ref<typeof View>
-        | Roact.Ref<typeof ScrollViewComponent>
+        | React.Ref<typeof View>
+        | React.Ref<typeof ScrollViewComponent>
         | null
         | undefined;
 
@@ -249,5 +252,5 @@ export class FlatList<ItemT = any> extends Roact.Component<FlatListProps<ItemT>>
     // TODO: use `unknown` instead of `any` for Typescript >= 3.0
     setNativeProps: (props: { [key: string]: any }) => void;
 
-	public render(): Roact.Element | undefined; // OverHash deviation: patch for Roact typings
+	public render(): React.Element | undefined; // OverHash deviation: patch for React typings
 }
